@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>botbuddy — Your Friendly AI</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+ 
+  <div class="app-shell">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="logo">
+          <div class="logo-sun">¥</div>
+          <span class="logo-name">botbuddy</span>
+        </div>
+      
+
+        <button class="new-chat-btn" id="newChatBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          New Chat
+        </button>
+      </div>
+      <div class="chat-history" id="chatHistory">
+        <p class="history-label">Recent</p>
+        <!-- history items appended by JS -->
+      </div>
+     <div class="sidebar-footer">
+  <div class="model-badge">gemini-2.5-flash</div>
+  <a href="/logout" class="logout-btn">Logout</a>
+</div>
+
+    </aside>
+
+    <!-- Main Chat Area -->
+    <main class="chat-area">
+
+      <!-- Welcome Screen -->
+      <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-glow"></div>
+        <div class="welcome-content">
+          <div class="welcome-sun">¥</div>
+          <h1 class="welcome-title">Hey there, I'm <em>botbuddy</em></h1>
+          <p class="welcome-sub">Your warm, curious, and endlessly helpful AI companion.<br/>Ask me anything — I'm here for it.</p>
+          <div class="suggestion-grid">
+            <button class="suggestion-chip" data-prompt="Explain quantum computing like I'm 10 years old">🔬 Explain quantum computing simply</button>
+            <button class="suggestion-chip" data-prompt="Give me 5 creative ideas for a weekend project">🎨 Weekend project ideas</button>
+            <button class="suggestion-chip" data-prompt="What's the best way to start learning a new language?">🌍 Learning a new language</button>
+            <button class="suggestion-chip" data-prompt="Write me a short, heartwarming story">📖 Write a heartwarming story</button>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <!-- Messages -->
+      <div class="messages-container" id="messagesContainer"></div>
+
+      <!-- Input Bar -->
+      <div class="input-bar">
+       <textarea
+       id="userInput"
+      class="input-textarea"
+      placeholder="Ask Sunny anything..."
+    rows="1"
+    maxlength="4000"
+  ></textarea>
+
+  <button type="button" class="mic-btn" id="micBtn" aria-label="Start voice input" title="Start voice input">
+    <svg class="mic-icon" width="22" height="22" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+      <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+      <line x1="12" y1="19" x2="12" y2="22"></line>
+    </svg>
+  </button>
+
+  <button type="button" class="send-btn" id="sendBtn" aria-label="Send message" title="Send message" disabled>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+    </svg>
+  </button>
+</div>
+
+    </main>
+  </div>
+
+  <script src="/static/js/chat.js"></script>
+</body>
+</html>
