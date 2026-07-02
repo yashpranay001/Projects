@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - botbuddy</title>
+  <link rel="stylesheet" href="/static/css/login.css" />
+</head>
+<body>
+  <main class="login-page">
+    <form class="login-card" method="POST">
+  <div class="login-logo">botbuddy</div>
+  <h1>Welcome back</h1>
+  <p>Login to continue chatting.</p>
+
+  {% if error %}
+    <div class="error">{{ error }}</div>
+  {% endif %}
+
+  <label for="username">Username</label>
+  <input id="username" type="text" name="username" placeholder="Enter username" required />
+
+  <label for="password">Password</label>
+  <input id="password" type="password" name="password" placeholder="Enter password" required />
+
+  <button type="submit">Login</button>
+
+  <small>Username: admin | Password: 12345</small>
+</form>
+
+  </main>
+</body>
+</html>
